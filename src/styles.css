@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701591408.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.p-component{
+    font-size: 14px !important;
+}
+.p-splitter{
+    background: transparent !important;
+}
+.p-menubar{
+    border-radius: 2px !important;
+}
+.bg-light > .p-card{
+    background: #fff !important;
+}
+.bg-dark > .p-card{
+    background: linear-gradient( rgb(0 0 0 / 85%), rgb(0 0 0 / 83%) ), url(https://c4.wallpaperflare.com/wallpaper/722/348/1019/clouds-fashion-landscape-man-wallpaper-preview.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+}
+.bg-dark > .p-card > .p-card-body > .p-card-title{
+    font-size: 50px;
+}
+.bg-dark > .p-card > .p-card-body > .p-card-content{
+    width: 50%;
+    margin: 0 auto;
+}
+.bg-dark > .p-card > .p-card-body{
+    padding: 5rem;
+}
+.prodzin-content{
+    margin: 0;
+}
+.required{
+    color: #fe6d6d;
+    font-size: 15px;
+}
+.not-required{
+    color: #7d7dff;
+}
+/* .p-dialog-mask{
+    background: #22222294 !important;
+} */

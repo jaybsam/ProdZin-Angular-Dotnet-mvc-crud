@@ -1,0 +1,62 @@
+<div class="col flex align-items-center justify-content-center"
+  [style]="{padding: '15px', width: '70%', margin: '0 auto'}">
+  <p-breadcrumb [model]="items" styleClass="p-mb-5" [home]="home"></p-breadcrumb>
+
+  <p-card header="Person List" subheader="Manage all person information" styleClass="p-card-shadow">
+    <ng-template pTemplate="header">
+    </ng-template>
+
+    <p-table [value]="persons" styleClass="p-datatable-gridlines">
+      <ng-template pTemplate="caption">
+        <button pButton pRipple label="Add Person" icon="pi pi-plus" class="p-button-outlined p-button-secondary mr-2"
+          routerLink="/persons/add"></button>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Profile</th>
+          <th>DisplayName</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th [style]="{textAlign: 'center'}">Action</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-persons>
+        <tr>
+          <td>
+            <p-avatar image="{{persons.avatar}}" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+          </td>
+          <td>{{persons.displayName}}</td>
+          <td>{{persons.email}}</td>
+          <td>{{persons.phone}}</td>
+          <td [style]="{textAlign: 'center'}">
+            <p-button icon="pi pi-eye" label="Show Info" styleClass="p-button-text p-button-info"></p-button>
+            <p-button icon="pi pi-pencil" routerLink="/persons/update/{{persons.id}}" label="Update"
+              styleClass="p-button-text"></p-button>
+            <p-button icon="pi pi-trash" label="Delete" (click)="showDialog(persons)"
+              styleClass="p-button-text p-button-danger"></p-button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-card>
+
+
+
+  <p-dialog header="Confirm Delete" [(visible)]="display" [modal]="true">
+
+    <p>Are you sure you want to delete <strong>Person ID {{this.deletePerson.id}}</strong> and email of
+      <strong>{{this.deletePerson.email}}</strong></p>
+
+    <ng-template pTemplate="footer">
+      <p-button icon="pi pi-trash" (onClick)="confirmDeletePerson()" label="Confirm Delete"
+        styleClass="p-button-text p-button-danger"></p-button>
+      <p-button icon="pi pi-check" (click)="display=false" label="Cancel"
+        styleClass="p-button-text p-button-outlined p-button-secondary"></p-button>
+    </ng-template>
+  </p-dialog>
+
+
+
+</div>
+
+<router-outlet></router-outlet>

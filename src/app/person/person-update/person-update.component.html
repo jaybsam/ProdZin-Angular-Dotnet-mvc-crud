@@ -1,0 +1,122 @@
+<div class="col flex align-items-center justify-content-center"
+  [style]="{padding: '15px', width: '70%', margin: '0 auto'}">
+  <p-breadcrumb [model]="items" styleClass="p-mb-5" [home]="home"></p-breadcrumb>
+
+  <form #form="ngForm" (ngSubmit)="updatePerson()">
+    <p-card header="Add person" subheader="Proceed filling up all required forms below:"
+      styleClass="p-card-shadow p-mt-5">
+      <ng-template pTemplate="header">
+      </ng-template>
+
+
+
+      <div class="p-fluid p-formgrid p-grid">
+        <!-- Name initial -->
+        <div class="p-field p-col-12 p-md-6">
+          <label for="firstname">Firstname <span class="required">*</span></label>
+          <input id="firstname" type="text" name="firstName" [(ngModel)]="forms.firstName" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+          <label for="lastname">Lastname <span class="required">*</span></label>
+          <input id="lastname" type="text" name="lastName" [(ngModel)]="forms.lastName" pInputText>
+        </div>
+
+        <!-- Persons address -->
+        <div class="p-field p-col-12 p-md-6">
+          <label for="address">Present Address <span class="required">*</span></label>
+          <textarea id="address" type="text" rows="4" name="primaryAddress" [(ngModel)]="forms.primaryAddress"
+            pInputTextarea></textarea>
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+          <label for="address2">Address 2 <span class="not-required">(Optional)</span></label>
+          <textarea id="address2" type="text" rows="4" name="secondaryAddress" [(ngModel)]="forms.secondaryAddress"
+            pInputTextarea></textarea>
+        </div>
+
+        <!-- City, state, country, zip -->
+        <div class="p-field p-col-12 p-md-3">
+          <label for="country">Country <span class="required">*</span></label>
+          <input id="country" type="text" name="country" [(ngModel)]="forms.country" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-md-3">
+          <label for="city">City <span class="required">*</span></label>
+          <input id="city" type="text" name="city" [(ngModel)]="forms.city" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-md-3">
+          <label for="state">State <span class="required">*</span></label>
+          <input id="state" type="text" name="state" [(ngModel)]="forms.state" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-md-3">
+          <label for="zip">Zip <span class="required">*</span></label>
+          <input id="zip" type="number" name="zip" [(ngModel)]="forms.zip" pInputText>
+        </div>
+
+        <div class="p-field p-col-12">
+          <p-divider align="center">
+            <h3> Job Info</h3>
+          </p-divider>
+        </div>
+
+        <div class="p-field p-col-12">
+          <label for="jobTitle">Job title <span class="not-required">(Optional)</span></label>
+          <input id="jobTitle" type="text" name="jobTitle" [(ngModel)]="forms.jobTitle" pInputText>
+        </div>
+        <div class="p-field p-col-12">
+          <label for="jobDescription">Job Description <span class="not-required">(Optional)</span></label>
+          <textarea id="jobDescription" type="text" rows="4" name="jobDescription" [(ngModel)]="forms.jobDescription"
+            pInputTextarea></textarea>
+        </div>
+        <div class="p-field p-col-12">
+          <label for="Phone">Phone number <span class="not-required">(Optional)</span></label>
+          <input id="Phone" type="text" name="phone" [(ngModel)]="forms.phone" pInputText>
+        </div>
+
+        <div class="p-field p-col-12">
+          <p-divider align="center">
+            <h3> Profile </h3>
+          </p-divider>
+        </div>
+
+        <div class="p-field p-col-12 p-md-6">
+          <label for="displayName">Display name <span class="required">*</span></label>
+          <input id="displayName" type="text" name="displayName" [(ngModel)]="forms.displayName" pInputText>
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input id="email" type="text" name="email" [(ngModel)]="forms.email" pInputText>
+        </div>
+
+        <div class="p-field p-col-12">
+          <label for="avatar">Avatar Image <span class="not-required">(Optional)</span></label>
+          <input id="avatar" type="text" name="avatar" [(ngModel)]="forms.avatar" pInputText
+            placeholder="Paste Image URL..">
+        </div>
+        <div class="p-field p-col-12">
+          <label for="personNotes">Personal Notes <span class="not-required">(Optional)</span></label>
+          <textarea id="personNotes" type="text" rows="4" name="personNotes" [(ngModel)]="forms.personNotes"
+            pInputTextarea></textarea>
+        </div>
+      </div>
+
+
+      <ng-template pTemplate="footer">
+        <div class="p-fluid p-formgrid p-grid">
+          <div class="p-field p-col-12 p-md-2"></div>
+          <div class="p-field p-col-12 p-md-2"></div>
+          <div class="p-field p-col-12 p-md-2"></div>
+          <div class="p-field p-col-12 p-md-2"></div>
+          <div class="p-field p-col-12 p-md-2">
+            <button type="submit" pButton icon="pi pi-check" label="Add Person"
+              class="p-mr-2 p-button-primary"></button>
+          </div>
+          <div class="p-field p-col-12 p-md-2">
+
+            <p-button icon="pi pi-times" label="Cancel" styleClass="p-button-secondary p-button-outlined"
+              routerLink="/persons/list"></p-button>
+          </div>
+        </div>
+      </ng-template>
+    </p-card>
+  </form>
+
+</div>
