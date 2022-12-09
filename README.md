@@ -9,7 +9,11 @@ Angular C# Dotnet MVC Application Exercise.
 
 Follow the instructions below to setup the `frontend`
 
-1. Run command `npm install`
+1. Open/Navigate to Root directory of the project and run command 
+
+```bash
+npm install
+```
 
 2. Run `ng server` or `npm run start` to start the angular app.
 
@@ -21,7 +25,9 @@ Follow the instructions below to setup the `frontend`
 
 Run the following To install the backend server:
 
-1. Open Package Manager Console or CLI and run:
+1. Open/Navigate to `backend-server` directory
+
+2. Open Package Manager Console or CLI and run:
 
 ```bash
 dotnet restore
@@ -29,7 +35,7 @@ dotnet restore
 
 restores all nuget package dependencies required for the project
 
-2. Open `appsettings.json` and updated the following line of code to your connectionString
+3. Open `appsettings.json` and updated the following line of code to your connectionString
 
 ```c
 "ConnectionStrings": {
@@ -37,13 +43,13 @@ restores all nuget package dependencies required for the project
   }
 ```
 
-2. Run the command below to Restore/Migrate database
+4. Run the command below to Restore/Migrate database
 
 ```
 Update-Database
 ```
 
-3. Run command `dotnet run` to start the server.
+5. Run command `dotnet run` to start the server.
 
 Server will now start at `https://localhost:7059`
 
