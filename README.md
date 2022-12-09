@@ -42,3 +42,71 @@ restores all nuget package dependencies required for the project
 ```
 Update-Database
 ```
+
+3. Run command `dotnet run` to start the server.
+
+Server will now start at `https://localhost:7059`
+
+## Available API Endpoints
+
+Use the following endpoints below or refer to [Swagger API Doc](https://localhost:7059/swagger/index.html)
+
+`[GET] https://localhost:7059/api/person`
+
+`[GET] https://localhost:7059/api/person/{id}`
+
+`[POST] https://localhost:7059/api/person`
+
+## Request Body
+```json
+{
+  "id": 0,
+  "firstName": "string",
+  "lastName": "string",
+  "displayName": "string",
+  "email": "user@example.com",
+  "personNotes": "string",
+  "primaryAddress": "string",
+  "secondaryAddress": "string",
+  "jobTitle": "string",
+  "jobDescription": "string",
+  "country": "string",
+  "city": "string",
+  "state": "string",
+  "zip": 0,
+  "isFavorite": true,
+  "avatar": "string",
+  "phone": "string",
+  "date": "2022-12-09T15:04:37.542Z"
+}
+```
+`[PUT] https://localhost:7059/api/person/{id}`
+
+## Request Body
+```json
+{
+  "id": 0,
+  "firstName": "string",
+  "lastName": "string",
+  "displayName": "string",
+  "email": "user@example.com",
+  "personNotes": "string",
+  "primaryAddress": "string",
+  "secondaryAddress": "string",
+  "jobTitle": "string",
+  "jobDescription": "string",
+  "country": "string",
+  "city": "string",
+  "state": "string",
+  "zip": 0,
+  "isFavorite": true,
+  "avatar": "string",
+  "phone": "string",
+  "date": "2022-12-09T15:04:37.542Z"
+}
+```
+
+`[DELETE] https://localhost:7059/api/person/{id}`
+
+
+end
