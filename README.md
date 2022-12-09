@@ -1,27 +1,44 @@
 # ProdZin
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+Angular C# Dotnet MVC Application Exercise.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Frontend Client
+`Note:` The required version of angular for this project is `v12.0.0`
 
-## Code scaffolding
+Follow the instructions below to setup the `frontend`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Run command `npm install`
 
-## Build
+2. Run `ng server` or `npm run start` to start the angular app.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+3. Frontend app will not run at `http://localhost:4200`
 
-## Running unit tests
+## Backend Server
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`Note:` The required version dotnet core version for this project is `dotnet core 6.0`
 
-## Running end-to-end tests
+Run the following To install the backend server:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
+1. Open Package Manager Console or CLI and run:
 
-## Further help
+```bash
+dotnet restore
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+restores all nuget package dependencies required for the project
+
+2. Open `appsettings.json` and updated the following line of code to your connectionString
+
+```c
+"ConnectionStrings": {
+    "DefaultConnection": "server=DESKTOP-I3COPLH\\SQLEXPRESS01;database=prodZin;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true"
+  }
+```
+
+2. Run the command below to Restore/Migrate database
+
+```
+Update-Database
+```
